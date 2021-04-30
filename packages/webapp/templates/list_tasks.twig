@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block title %}List Tasks{% endblock %}
+
+{% block content %}
+    <div id="taskList" >
+        {% for task in tasks %}
+            <div class="task">
+                <div class="title">
+                    <h4>{{ task.title }}</h4>
+                </div>
+                <div class="content">
+                    <span>{{ task.content | slice(0, 50) }}</span>
+                </div>
+                <div class="footer">
+                    <span>{{ task.created_at }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
