@@ -9,4 +9,4 @@ RUN apk --update upgrade \
     && docker-php-ext-install -j $(nproc) pdo_mysql \
     && apk del .phpize-deps
 
-COPY etc/php/ /usr/local/etc/php/
+COPY packages/webapp/etc/php/ /usr/local/etc/php/
