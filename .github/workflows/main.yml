@@ -31,4 +31,9 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Start and test webapp
-        run: docker-compose up --exit-code-from cypress
+        run: |
+          cd ./packages/webapp
+          apt-get install composer
+          composer install
+          cd ../..
+          docker-compose up --exit-code-from cypress
