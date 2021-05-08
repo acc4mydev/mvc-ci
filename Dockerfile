@@ -7,6 +7,6 @@ RUN apk --update upgrade \
     && apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS imagemagick-dev libtool \
     && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
     && docker-php-ext-install -j $(nproc) pdo_mysql \
-    && apk del .phpize-deps \
+    && apk del .phpize-deps
 
-    COPY packages/webapp/etc/php/ /usr/local/etc/php/
+COPY packages/webapp/etc/php/ /usr/local/etc/php/
