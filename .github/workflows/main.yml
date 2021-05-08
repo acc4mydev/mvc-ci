@@ -35,5 +35,6 @@ jobs:
           cd ./packages/webapp
           sudo apt-get install composer
           composer install
-          cd ../..
+          cd ..
+          cd ..
           docker-compose up --exit-code-from cypress
