@@ -33,7 +33,7 @@ jobs:
       - name: Start and test webapp
         run: |
           cd ./packages/webapp
-          apt-get install composer
+          sudo apt-get install composer
           composer install
           cd ../..
           docker-compose up --exit-code-from cypress
