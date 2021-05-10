@@ -5,3 +5,7 @@ var
 /build/
 /composer.phar
 /.phpunit.result.cache
+
+**/node_modules
+**/cypress/screenshots
+**/cypress/videos

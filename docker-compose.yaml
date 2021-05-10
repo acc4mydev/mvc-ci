@@ -45,3 +45,13 @@ services:
       - 8080:8080
     depends_on:
       - db
+
+  cypress:
+    container_name: pw_local_cypress
+    image: cypress/included:7.2.0
+    working_dir: /e2e
+    network_mode: host
+    volumes:
+      - ./test/e2e:/e2e
+    depends_on:
+      - nginx
