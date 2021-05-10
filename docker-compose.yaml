@@ -51,6 +51,7 @@ services:
     image: cypress/included:7.2.0
     working_dir: /e2e
     network_mode: host
+    command: ["./wait-for-it.sh", "app:9030"]
     volumes:
       - ./test/e2e:/e2e
     depends_on:

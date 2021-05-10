@@ -7,6 +7,43 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{% block title %}{% endblock %}</title>
     {% endblock %}
+
+    <style>
+        #taskList {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1024px;
+            margin:0 auto;
+        }
+        .task {
+            width: 300px;
+            margin: 1.25rem;
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.4);
+            padding: 1.25rem;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+        .task .title {
+            text-align:center;
+        }
+        .task .footer {
+            text-align: right;
+            font-size: smaller;
+            border-top: 1px dashed black;
+            padding-top: 0.25rem;
+            box-sizing: border-box;
+        }
+        .task h4 {
+            margin-top: 0;
+        }
+        .task > .content {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 1rem;
+            word-wrap: break-word
+        }
+    </style>
 </head>
 <body>
 <div id="content">{% block content %}{% endblock %}</div>

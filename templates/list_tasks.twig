@@ -3,13 +3,19 @@
 {% block title %}List Tasks{% endblock %}
 
 {% block content %}
-    <ol>
+    <div id="taskList" >
         {% for task in tasks %}
-            <li>Title: {{ task.title }}</li>
-            <ul>
-                <li>Content: {{ task.content | slice(0, 50) }}</li>
-                <li>Created at: {{ task.created_at }}</li>
-            </ul>
+            <div class="task">
+                <div class="title">
+                    <h4>{{ task.title }}</h4>
+                </div>
+                <div class="content">
+                    <span>{{ task.content | slice(0, 50) }}</span>
+                </div>
+                <div class="footer">
+                    <span>{{ task.created_at }}</span>
+                </div>
+            </div>
         {% endfor %}
-    </ol>
+    </div>
 {% endblock %}
